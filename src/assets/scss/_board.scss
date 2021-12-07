@@ -1,0 +1,45 @@
+.board {
+   display: grid;
+   gap: 0 10px;
+   &.easy {
+      grid-template: 1fr / repeat(3, 1fr);
+   }
+   &.medium {
+      grid-template: 1fr / repeat(6, 1fr);
+   }
+   &.hard {
+      grid-template: 1fr / repeat(6, 1fr);
+   }
+}
+.card {
+   cursor: pointer;
+   width: 180px;
+   height: 200px;
+   perspective: 600px;
+   background-color: transparent;
+   box-shadow: none;
+   &__single {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      &.opened {
+         transform: rotateY(180deg);
+      }
+   }
+   &__content {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      backface-visibility: hidden;
+      &.card-front {
+         background: lightgreen;
+      }
+      &.card-back {
+         background: rebeccapurple;
+         transform: rotateY(180deg);
+
+      }
+   }
+}

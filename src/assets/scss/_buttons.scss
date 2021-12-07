@@ -1,0 +1,14 @@
+button {
+   &.btn-primary {
+      color: white;
+      border-radius: 4px;
+      background-color: #1565c0 !important;
+      &:hover {
+         background-color: #2196f3  !important;
+      }
+      &:focus {
+         background-color: #388ed4 !important;
+         border: none;
+      }
+   }
+}
