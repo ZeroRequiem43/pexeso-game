@@ -6,9 +6,8 @@ button {
       &:hover {
          background-color: #2196f3  !important;
       }
-      &:focus {
-         background-color: #388ed4 !important;
-         border: none;
-      }
+   }
+   &.btn-show-settings {
+      min-width: 200px;
    }
 }

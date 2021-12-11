@@ -1,25 +1,40 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit"
+import paths from '../data/pathsData.json'
+import shuffle from "../utils/shuffleFunction"
 
 export const boardReducer = createSlice({
    name: 'board',
    initialState: {
-      size: 12,
       cards: [],
-      difficult: 'Лёгкая'
-      // cards: [{ id: 0, text: 'Pervii' }, { id: 1, text: 'Vtoroi' }, { id: 2, text: 'Tretii' }]
+      size: 12,
+      cardsType: 'animals',
+      difficult: 'Лёгкая',
    },
    reducers: {
-      setSize: (state, action) => {
-         state.size = action.payload
-      },
-      setDifficult: (state, action) => {
-         state.difficult = action.payload
-      },
-      generateCards: (state, action) => {
-         const num = action.payload
-         for (let i = 0; i < num; i++) {
-            state.cards.push({ id: nanoid(), text: '123', clicked: false })
+      setOption: {
+         reducer(state, action) {
+            state[action.payload.type] = action.payload.value
+         },
+         prepare(type, value) {
+            return { payload: { type, value } }
          }
+      },
+      generateCards: (state) => {
+         const tempArr1 = []
+         const tempArr2 = []
+         const type = state.cardsType
+         const halfSize = state.size / 2
+         for (let i = 0; i < halfSize; i++) {
+            tempArr1.push({ id: nanoid(), name: paths[type][i].name, path: paths[type][i].path, clicked: false, done: false })
+            tempArr2.push({ id: nanoid(), name: paths[type][i].name, path: paths[type][i].path, clicked: false, done: false })
+         }
+         state.cards = shuffle(tempArr1.concat(tempArr2))
+      },
+      // Для определения совпавших карт будет добавляться новый класс, который запретит им переворачиваться обратно
+      // Сравнение будет производится по имени. Для этого создадутся новый временный массив, который будет чиститься каждый раз
+      // когда совпадение произошло или не произошло
+      clearCards: (state) => {
+         state.cards = []
       },
       setClicked: (state, action) => {
          let currentCards = [...state.cards]
@@ -30,6 +45,6 @@ export const boardReducer = createSlice({
       }
    }
 })
-export const { setSize, setDifficult, generateCards, setClicked } = boardReducer.actions
+export const { setOption, generateCards, clearCards, setClicked } = boardReducer.actions
 
 export default boardReducer.reducer

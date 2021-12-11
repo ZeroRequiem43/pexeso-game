@@ -1,20 +1,21 @@
 .board {
    display: grid;
+   justify-content: center;
    gap: 0 10px;
    &.easy {
-      grid-template: 1fr / repeat(3, 1fr);
+      grid-template: 1fr / repeat(4, 200px);
    }
    &.medium {
-      grid-template: 1fr / repeat(6, 1fr);
+      grid-template: 1fr / repeat(6, 200px);
    }
    &.hard {
-      grid-template: 1fr / repeat(6, 1fr);
+      grid-template: 1fr / repeat(8, 200px);
    }
 }
 .card {
    cursor: pointer;
    width: 180px;
-   height: 200px;
+   height: 260px;
    perspective: 600px;
    background-color: transparent;
    box-shadow: none;
@@ -33,13 +34,17 @@
       height: 100%;
       width: 100%;
       backface-visibility: hidden;
+      border: 2px solid black;
+      border-radius: 4px;
       &.card-front {
-         background: lightgreen;
+         background: grey;
       }
       &.card-back {
-         background: rebeccapurple;
          transform: rotateY(180deg);
-
+         img {
+            max-width: 100%;
+            max-height: 100%;
+         }
       }
    }
 }
