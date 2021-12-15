@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setOption } from '../../store/boardReducer'
 import M from 'materialize-css'
 
-export const Settings = ({ setModalActive }) => {
+const Settings = () => {
    const inputEl = useRef(null)
    const dispatch = useDispatch()
    const currentDifficult = useSelector(state => state.board.difficult)
@@ -13,8 +13,9 @@ export const Settings = ({ setModalActive }) => {
       M.FormSelect.init(inputEl.current)
    }, [])
 
-   function setDifficultAndSize(e) {
+   function setSettings(e) {
       dispatch(setOption('size', e.target.dataset.size))
+      dispatch(setOption('time', e.target.dataset.time))
       dispatch(setOption('difficult', e.target.value))
    }
 
@@ -41,13 +42,14 @@ export const Settings = ({ setModalActive }) => {
                <h5>Выберите сложность</h5>
             </div>
             <div className="settings__form-diff row">
-               <form onChange={(e) => setDifficultAndSize(e)} className="col s12 m-l">
+               <form onChange={(e) => setSettings(e)} className="col s12 m-l">
                   <div>
                      <label>
                         <input
                            className="with-gap"
                            value="Лёгкая"
                            data-size="12"
+                           data-time="1500"
                            type="radio"
                            name="difficult"
                            id="easy"
@@ -61,6 +63,7 @@ export const Settings = ({ setModalActive }) => {
                            className="with-gap"
                            value="Средняя"
                            data-size="24"
+                           data-time="1000"
                            type="radio"
                            name="difficult"
                            id="medium"
@@ -74,6 +77,7 @@ export const Settings = ({ setModalActive }) => {
                            className="with-gap"
                            value="Высокая"
                            data-size="32"
+                           data-time="600"
                            type="radio"
                            name="difficult"
                            id="hard"
@@ -84,9 +88,8 @@ export const Settings = ({ setModalActive }) => {
                </form>
             </div>
          </div >
-         <div className="settings__buttons">
-            <button className="btn btn-primary" onClick={() => setModalActive(false)}>Закрыть</button>
-         </div>
       </div >
    )
 }
+
+export default Settings

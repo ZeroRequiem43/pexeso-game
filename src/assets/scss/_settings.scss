@@ -1,5 +1,4 @@
 .settings {
-   min-height: 200px;
    height: 100%;
    // .settings__select
 
@@ -9,10 +8,5 @@
    // .settings__input
 
    &__input {
-   }
-
-   &__buttons {
-      display: flex;
-      justify-content: flex-end;
    }
 }

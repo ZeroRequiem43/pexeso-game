@@ -4,7 +4,7 @@ import { Board } from '../components/game/Board'
 import { useDispatch, useSelector } from 'react-redux'
 import { generateCards, clearCards } from '../store/boardReducer'
 
-export const GamePage = ({ setModalActive }) => {
+const GamePage = ({ setModalActive }) => {
    const dispatch = useDispatch()
    const difficult = useSelector(state => state.board.difficult)
    const [isGameStarted, setIsGameStarted] = useState(false)
@@ -14,7 +14,7 @@ export const GamePage = ({ setModalActive }) => {
       setIsGameStarted(true)
    }
 
-   function stopGame() {
+   function resetGame() {
       dispatch(clearCards())
       setIsGameStarted(false)
    }
@@ -24,15 +24,16 @@ export const GamePage = ({ setModalActive }) => {
          <div className="game__info">
             <div className="game__title">
                <h2>Kakoi-to title</h2>
+               <button onClick={() => setModalActive(true)}>test</button>
                {!isGameStarted
                   ? <button className="btn btn-primary btn-show-settings" onClick={startGame}>Играть</button>
-                  : <button className="btn btn-primary btn-show-settings" onClick={stopGame}>Остановить игру</button>
+                  : <button className="btn btn-primary btn-show-settings" onClick={resetGame}>Остановить игру</button>
                }
                <button
                   className="btn btn-primary btn-show-settings"
                   disabled={isGameStarted}
                   onClick={() => setModalActive(true)}
-               >{showSettings ? 'Скрыть настройки' : 'Показать настройки'}</button>
+               >Показать настройки</button>
             </div>
             <div className="game__difficult">
                Сложность: <span className="bold">{difficult}</span>
@@ -50,3 +51,5 @@ export const GamePage = ({ setModalActive }) => {
       </div>
    )
 }
+
+export default GamePage

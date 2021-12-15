@@ -5,9 +5,13 @@ import shuffle from "../utils/shuffleFunction"
 export const boardReducer = createSlice({
    name: 'board',
    initialState: {
+      compare: [],
       cards: [],
       size: 12,
-      cardsType: 'animals',
+      time: 1500,
+      gameTime: 0,
+      isGameWin: false,
+      cardsType: 'cards',
       difficult: 'Лёгкая',
    },
    reducers: {
@@ -30,21 +34,41 @@ export const boardReducer = createSlice({
          }
          state.cards = shuffle(tempArr1.concat(tempArr2))
       },
-      // Для определения совпавших карт будет добавляться новый класс, который запретит им переворачиваться обратно
-      // Сравнение будет производится по имени. Для этого создадутся новый временный массив, который будет чиститься каждый раз
-      // когда совпадение произошло или не произошло
       clearCards: (state) => {
          state.cards = []
       },
       setClicked: (state, action) => {
-         let currentCards = [...state.cards]
-         let newCardsList = currentCards.map(c => c.id === action.payload
-            ? { ...c, clicked: !c.clicked }
-            : c)
-         state.cards = newCardsList
+         const currentCards = [...state.cards]
+         let newCards = currentCards.map(c => {
+            if (c.id !== action.payload) {
+               return c
+            }
+
+            if (!c.clicked) {
+               state.compare.push(c)
+               if (state.compare.length === 2) {
+                  if (state.compare[0].name === state.compare[1].name && state.compare[0].id !== state.compare[1].id) {
+                     const prevCards = currentCards.filter(card => card.name === c.name)
+                     prevCards.forEach(card => card.done = true)
+                  }
+                  state.compare = []
+               }
+            }
+            return { ...c, clicked: !c.clicked }
+         })
+         state.cards = newCards
+      },
+      closeCards: (state) => {
+         state.cards.forEach((c) => {
+            if (c.clicked === true && c.done === false) {
+               c.clicked = false
+            }
+            return c
+         })
       }
-   }
+   },
+
 })
-export const { setOption, generateCards, clearCards, setClicked } = boardReducer.actions
+export const { setOption, generateCards, clearCards, setClicked, closeCards } = boardReducer.actions
 
 export default boardReducer.reducer
