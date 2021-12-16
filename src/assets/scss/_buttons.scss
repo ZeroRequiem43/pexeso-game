@@ -2,9 +2,15 @@ button {
    &.btn-primary {
       color: white;
       border-radius: 4px;
-      background-color: #1565c0 !important;
+      background-color: #1565c0;
       &:hover {
-         background-color: #2196f3  !important;
+         background-color: #2196f3;
+      }
+   }
+   &.btn-success {
+      background-color: #28a745;
+      &:hover {
+         background-color: #218838;
       }
    }
    &.btn-show-settings {

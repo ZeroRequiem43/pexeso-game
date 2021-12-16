@@ -1,22 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Stopwatch } from '../components/game/Stopwatch'
 import { Board } from '../components/game/Board'
 import { useDispatch, useSelector } from 'react-redux'
 import { generateCards, clearCards } from '../store/boardReducer'
 
-const GamePage = ({ setModalActive }) => {
+const GamePage = ({ setModal, isGameStarted, setGameStart }) => {
    const dispatch = useDispatch()
    const difficult = useSelector(state => state.board.difficult)
-   const [isGameStarted, setIsGameStarted] = useState(false)
 
    function startGame() {
       dispatch(generateCards())
-      setIsGameStarted(true)
+      setGameStart(true)
    }
 
    function resetGame() {
       dispatch(clearCards())
-      setIsGameStarted(false)
+      setGameStart(false)
    }
 
    return (
@@ -24,7 +23,7 @@ const GamePage = ({ setModalActive }) => {
          <div className="game__info">
             <div className="game__title">
                <h2>Kakoi-to title</h2>
-               <button onClick={() => setModalActive(true)}>test</button>
+               <button onClick={() => setModal(true)}>test</button>
                {!isGameStarted
                   ? <button className="btn btn-primary btn-show-settings" onClick={startGame}>Играть</button>
                   : <button className="btn btn-primary btn-show-settings" onClick={resetGame}>Остановить игру</button>
@@ -32,7 +31,7 @@ const GamePage = ({ setModalActive }) => {
                <button
                   className="btn btn-primary btn-show-settings"
                   disabled={isGameStarted}
-                  onClick={() => setModalActive(true)}
+                  onClick={() => setModal(true)}
                >Показать настройки</button>
             </div>
             <div className="game__difficult">
@@ -40,7 +39,7 @@ const GamePage = ({ setModalActive }) => {
             </div>
          </div>
          <div className="game__stopwatch">
-            <Stopwatch isGameStarted={isGameStarted} />
+            <Stopwatch setModal={setModal} isGameStarted={isGameStarted} />
             <div className="divider"></div>
          </div>
          <div className="game__content row">

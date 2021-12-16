@@ -1,8 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import Header from './components/Header'
-import MainPage from './pages/MainPage'
 import GamePage from './pages/GamePage'
 import Settings from './components/game/Settings'
 import Win from './components/game/Win'
@@ -14,22 +11,21 @@ import './assets/scss/index.scss'
 
 export default function App() {
   const [modalActive, setModalActive] = useState(false)
+  const [isGameStarted, setIsGameStarted] = useState(false)
   const isGameWin = useSelector(state => state.board.isGameWin)
+
+  const setModal = (value) => setModalActive(value)
+  const setGameStart = (value) => setIsGameStarted(value)
+
 
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Routes >
-          <Route path="/" element={<MainPage />} />
-          <Route path="/game" element={<GamePage setModalActive={setModalActive} />} />
-        </Routes >
-        <Modal header={isGameWin ? 'Ура!' : 'Настройки'} modalActive={modalActive} setModalActive={setModalActive}>
-          {!isGameWin
-            ? <Settings />
-            : <Win />}
-        </Modal>
-      </Router>
+      <GamePage setModal={setModal} isGameStarted={isGameStarted} setGameStart={setGameStart} />
+      <Modal header={isGameWin ? 'Ура!' : 'Настройки'} modalActive={modalActive} setModal={setModal}>
+        {!isGameWin
+          ? <Settings />
+          : <Win setModal={setModal} />}
+      </Modal>
     </div>
   );
 }
