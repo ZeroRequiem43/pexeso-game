@@ -1,0 +1,68 @@
+{
+   "cards": [
+      {
+         "name": "club-ace",
+         "path": "assets/images/cards/club-ace.jpg"
+      },
+      {
+         "name": "club-king",
+         "path": "assets/images/cards/club-king.jpg"
+      },
+      {
+         "name": "club-queen",
+         "path": "assets/images/cards/club-queen.jpg"
+      },
+      {
+         "name": "club-jack",
+         "path": "assets/images/cards/club-jack.jpg"
+      },
+      {
+         "name": "heart-ace",
+         "path": "assets/images/cards/heart-ace.jpg"
+      },
+      {
+         "name": "heart-king",
+         "path": "assets/images/cards/heart-king.jpg"
+      },
+      {
+         "name": "heart-queen",
+         "path": "assets/images/cards/heart-queen.jpg"
+      },
+      {
+         "name": "heart-jack",
+         "path": "assets/images/cards/heart-jack.jpg"
+      },
+      {
+         "name": "spade-ace",
+         "path": "assets/images/cards/spade-ace.jpg"
+      },
+      {
+         "name": "spade-king",
+         "path": "assets/images/cards/spade-king.jpg"
+      },
+      {
+         "name": "spade-queen",
+         "path": "assets/images/cards/spade-queen.jpg"
+      },
+      {
+         "name": "spade-jack",
+         "path": "assets/images/cards/spade-jack.jpg"
+      },
+      {
+         "name": "diamond-ace",
+         "path": "assets/images/cards/diamond-ace.jpg"
+      },
+      {
+         "name": "diamond-king",
+         "path": "assets/images/cards/diamond-king.jpg"
+      },
+      {
+         "name": "diamond-queen",
+         "path": "assets/images/cards/diamond-queen.jpg"
+      },
+      {
+         "name": "diamond-jack",
+         "path": "assets/images/cards/diamond-jack.jpg"
+      }
+   ]
+}
