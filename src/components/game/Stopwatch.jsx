@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setOption } from '../../store/boardReducer'
+import { showModal } from '../../store/modalReducer'
 import formatTime from '../../utils/formatTimeFunction'
 
-export const Stopwatch = ({ setModal, isGameStarted }) => {
+export const Stopwatch = ({ isGameStarted }) => {
    const isGameWin = useSelector(state => state.board.isGameWin)
    const [time, setTime] = useState(0)
    const dispatch = useDispatch()
@@ -18,20 +19,19 @@ export const Stopwatch = ({ setModal, isGameStarted }) => {
       } else if (isGameWin && time > 0) {
          dispatch(setOption('gameTime', time))
          clearInterval(ticks)
-         setModal(true)
+         dispatch(showModal(true))
          setTime(0)
       } else {
          clearInterval(ticks)
          setTime(0)
       }
       return () => clearInterval(ticks)
-   }, [time, isGameStarted, isGameWin, setModal, dispatch])
+   }, [time, isGameStarted, isGameWin, dispatch])
 
 
 
    return (
       <div className="stopwatch">
-         <button>123</button>
          {formatTime(time)}
       </div>
    )

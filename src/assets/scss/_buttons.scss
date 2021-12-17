@@ -6,6 +6,9 @@ button {
       &:hover {
          background-color: #2196f3;
       }
+      &:focus {
+         background-color: #104c91;
+      }
    }
    &.btn-success {
       background-color: #28a745;

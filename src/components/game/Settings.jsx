@@ -32,7 +32,6 @@ const Settings = () => {
                >
                   <option value="animals" data-icon="assets/icons/animals-icon.jpg">Животные</option>
                   <option value="cards" data-icon="assets/icons/cards-icon.jpg">Игральные карты</option>
-                  <option value="signs" data-icon="assets/icons/signs-icon.jpg">Дорожные знаки</option>
                </select>
                <label>Выберите тип карточек</label>
             </div>

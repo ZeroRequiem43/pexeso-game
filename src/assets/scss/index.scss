@@ -3,6 +3,8 @@
 @import './settings';
 @import './buttons';
 @import './modal';
+@import './gamepage';
+@import './media';
 
 html, body {
    height: 100%;
@@ -15,6 +17,10 @@ html, body {
 }
 body {
    overflow-y: scroll
+}
+
+.bold {
+   font-weight: 700;
 }
 
 .dropdown-content li>span {

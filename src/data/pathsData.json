@@ -1,4 +1,70 @@
 {
+   "animals": [
+      {
+         "name": "bear",
+         "path": "assets/images/animals/bear.jpg"
+      },
+      {
+         "name": "camel",
+         "path": "assets/images/animals/camel.jpg"
+      },
+      {
+         "name": "cow",
+         "path": "assets/images/animals/cow.jpg"
+      },
+      {
+         "name": "crocodile",
+         "path": "assets/images/animals/crocodile.jpg"
+      },
+      {
+         "name": "deer",
+         "path": "assets/images/animals/deer.jpg"
+      },
+      {
+         "name": "elephant",
+         "path": "assets/images/animals/elephant.jpg"
+      },
+      {
+         "name": "fox",
+         "path": "assets/images/animals/fox.jpg"
+      },
+      {
+         "name": "giraffe",
+         "path": "assets/images/animals/giraffe.jpg"
+      },
+      {
+         "name": "horse",
+         "path": "assets/images/animals/horse.jpg"
+      },
+      {
+         "name": "lion",
+         "path": "assets/images/animals/lion.jpg"
+      },
+      {
+         "name": "monkey",
+         "path": "assets/images/animals/monkey.jpg"
+      },
+      {
+         "name": "rabbit",
+         "path": "assets/images/animals/rabbit.jpg"
+      },
+      {
+         "name": "rat",
+         "path": "assets/images/animals/rat.jpg"
+      },
+      {
+         "name": "snake",
+         "path": "assets/images/animals/snake.jpg"
+      },
+      {
+         "name": "tiger",
+         "path": "assets/images/animals/tiger.jpg"
+      },
+      {
+         "name": "turtle",
+         "path": "assets/images/animals/turtle.jpg"
+      }
+   ],
    "cards": [
       {
          "name": "club-ace",

@@ -11,7 +11,7 @@ export const boardReducer = createSlice({
       time: 1500,
       gameTime: 0,
       isGameWin: false,
-      cardsType: 'cards',
+      cardsType: 'animals',
       difficult: 'Лёгкая',
    },
    reducers: {
