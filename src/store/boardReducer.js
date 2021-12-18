@@ -13,6 +13,7 @@ export const boardReducer = createSlice({
       isGameWin: false,
       cardsType: 'animals',
       difficult: 'Лёгкая',
+      showModal: false
    },
    reducers: {
       setOption: {
@@ -65,10 +66,12 @@ export const boardReducer = createSlice({
             }
             return c
          })
+      }, showModal: (state, action) => {
+         state.showModal = action.payload
       }
    },
 
 })
-export const { setOption, generateCards, clearCards, setClicked, closeCards } = boardReducer.actions
+export const { setOption, generateCards, clearCards, setClicked, closeCards, showModal } = boardReducer.actions
 
 export default boardReducer.reducer

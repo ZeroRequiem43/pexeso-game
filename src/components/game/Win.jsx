@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearCards, generateCards, setOption } from '../../store/boardReducer'
-import { showModal } from '../../store/modalReducer'
+import { clearCards, generateCards, setOption, showModal } from '../../store/boardReducer'
 import formatTime from '../../utils/formatTimeFunction'
 
 const Win = () => {

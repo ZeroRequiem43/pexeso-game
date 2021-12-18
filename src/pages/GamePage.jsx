@@ -2,8 +2,7 @@ import React from 'react'
 import { Stopwatch } from '../components/game/Stopwatch'
 import { Board } from '../components/game/Board'
 import { useDispatch, useSelector } from 'react-redux'
-import { generateCards, clearCards, setOption } from '../store/boardReducer'
-import { showModal } from '../store/modalReducer'
+import { generateCards, clearCards, setOption, showModal } from '../store/boardReducer'
 
 const GamePage = ({ isGameStarted, setGameStart }) => {
    const dispatch = useDispatch()

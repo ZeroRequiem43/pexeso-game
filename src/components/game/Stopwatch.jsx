@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setOption } from '../../store/boardReducer'
-import { showModal } from '../../store/modalReducer'
+import { setOption, showModal } from '../../store/boardReducer'
 import formatTime from '../../utils/formatTimeFunction'
 
 export const Stopwatch = ({ isGameStarted }) => {

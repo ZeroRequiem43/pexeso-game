@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { showModal } from '../store/modalReducer'
+import { showModal } from '../store/boardReducer'
 
 const Modal = ({ header, children }) => {
-   const modalState = useSelector(state => state.modal.show)
+   const modalState = useSelector(state => state.board.showModal)
    const dispatch = useDispatch()
 
    return (
