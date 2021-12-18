@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/pexeso-game-source/static/css/main.e11264c7.chunk.css",
-    "main.js": "/pexeso-game-source/static/js/main.adc08375.chunk.js",
-    "main.js.map": "/pexeso-game-source/static/js/main.adc08375.chunk.js.map",
-    "runtime-main.js": "/pexeso-game-source/static/js/runtime-main.d7686838.js",
-    "runtime-main.js.map": "/pexeso-game-source/static/js/runtime-main.d7686838.js.map",
-    "static/css/2.b0300f7a.chunk.css": "/pexeso-game-source/static/css/2.b0300f7a.chunk.css",
-    "static/js/2.c7eb0f51.chunk.js": "/pexeso-game-source/static/js/2.c7eb0f51.chunk.js",
-    "static/js/2.c7eb0f51.chunk.js.map": "/pexeso-game-source/static/js/2.c7eb0f51.chunk.js.map",
-    "index.html": "/pexeso-game-source/index.html",
-    "static/css/2.b0300f7a.chunk.css.map": "/pexeso-game-source/static/css/2.b0300f7a.chunk.css.map",
-    "static/css/main.e11264c7.chunk.css.map": "/pexeso-game-source/static/css/main.e11264c7.chunk.css.map",
-    "static/js/2.c7eb0f51.chunk.js.LICENSE.txt": "/pexeso-game-source/static/js/2.c7eb0f51.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/pexeso-game-source/static/media/cards.f0f54819.png"
+    "main.css": "/pexeso-game/static/css/main.fac7c971.chunk.css",
+    "main.js": "/pexeso-game/static/js/main.a7ead44e.chunk.js",
+    "main.js.map": "/pexeso-game/static/js/main.a7ead44e.chunk.js.map",
+    "runtime-main.js": "/pexeso-game/static/js/runtime-main.2e9eb2bd.js",
+    "runtime-main.js.map": "/pexeso-game/static/js/runtime-main.2e9eb2bd.js.map",
+    "static/css/2.b0300f7a.chunk.css": "/pexeso-game/static/css/2.b0300f7a.chunk.css",
+    "static/js/2.c607be72.chunk.js": "/pexeso-game/static/js/2.c607be72.chunk.js",
+    "static/js/2.c607be72.chunk.js.map": "/pexeso-game/static/js/2.c607be72.chunk.js.map",
+    "index.html": "/pexeso-game/index.html",
+    "static/css/2.b0300f7a.chunk.css.map": "/pexeso-game/static/css/2.b0300f7a.chunk.css.map",
+    "static/css/main.fac7c971.chunk.css.map": "/pexeso-game/static/css/main.fac7c971.chunk.css.map",
+    "static/js/2.c607be72.chunk.js.LICENSE.txt": "/pexeso-game/static/js/2.c607be72.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/pexeso-game/static/media/cards.f0f54819.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d7686838.js",
+    "static/js/runtime-main.2e9eb2bd.js",
     "static/css/2.b0300f7a.chunk.css",
-    "static/js/2.c7eb0f51.chunk.js",
-    "static/css/main.e11264c7.chunk.css",
-    "static/js/main.adc08375.chunk.js"
+    "static/js/2.c607be72.chunk.js",
+    "static/css/main.fac7c971.chunk.css",
+    "static/js/main.a7ead44e.chunk.js"
   ]
 }
